@@ -1,0 +1,640 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment_3</title>
+    <style>
+
+
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana;
+            list-style: none;
+        }
+
+        p.a {
+            font-size: 1.2vw;
+            padding: 5px 40px 5px 30px;
+        }
+
+        p.b {
+            padding: 20px 0px 0px 0px;
+        }
+
+        h3.intro {
+            padding: 70px 0px 0px 0px;
+        }
+
+        h3.tt {
+            padding: 60px 0px 0px 0px;
+        }
+
+        h3.heading-wide {
+            padding: 60px 0px 30px 0px;
+        }
+
+        h3.serv {
+            padding: 50px 0px 20px 0px;
+        }
+
+        figure {
+            background: #f7f7f7;
+            border-bottom: 1px solid #eee;
+            margin: 0em auto;
+            padding: 0em 0%;
+            width: 100%
+        }
+
+        nav {
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            background-color: #d3b2ed;
+            top: 0;
+            left: 0;
+        }
+
+            nav > ul {
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+                nav > ul > li {
+                    display: block;
+                    float: left;
+                    width: 20%;
+                    text-align: center;
+                    line-height: 50px;
+                    position: relative;
+                }
+
+                    /*------- Drop down styling------ */
+                    nav > ul > li > a {
+                        display: block;
+                        color: #6c2f9c;
+                        text-decoration: none;
+                        font-size: 1em;
+                        font-weight: bold;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                    }
+
+                        nav > ul > li > a::after {
+                            content: '';
+                            height: 0px;
+                            width: 100%;
+                            position: absolute;
+                            background-color: #FFFFFF;
+                            bottom: 0;
+                            left: 0;
+                            transition: all ease-in-out .2s;
+                        }
+
+                        nav > ul > li > a:hover {
+                            background-color: #acd5fc;
+                        }
+
+                            nav > ul > li > a:hover::after {
+                                height: 3px;
+                            }
+
+                    nav > ul > li:hover > ul {
+                        display: block
+                    }
+
+                    nav > ul > li > ul {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        top: 50px;
+                        left: 0;
+                        height: auto;
+                        background-color: #9dcaf5;
+                        display: none;
+                    }
+
+                        nav > ul > li > ul > li > a {
+                            text-decoration: none;
+                            color: #f7f7f7;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                            nav > ul > li > ul > li > a:hover {
+                                background-color: #a6b1ed;
+                            }
+
+        /*-------  End of Nav Bar ------ */
+
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px 40px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #acd5fc;
+        }
+
+            .button1:hover {
+                background-color: #acd5fc;
+                color: white;
+            }
+
+        .convert-btn {
+            background-color: white;
+            color: black;
+            border: 2px solid #d3b2ed;
+            padding: 3px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+            .convert-btn:hover {
+                background-color: #d3b2ed;
+                color: white;
+            }
+
+        /*-------  End of Button styling ------ */
+
+
+        .logo {
+            width: 150px;
+            float: left;
+            padding: 70px 30px 30px 30px
+        }
+
+        .iconA {
+            width: 150px;
+            float: left;
+            padding: 40px 30px 30px 30px
+        }
+
+        .icons {
+            width: 150px;
+            float: left;
+            padding: 20px 30px 50px 15px
+        }
+
+        .img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        div.frame {
+            width: 100%;
+            box-shadow: 6px 8px 8px 6px rgba(0, 0, 0, 0.2), 6px 6px 20px 6px rgba(0, 0, 0, 0.19);
+            text-align: center;
+            padding: 15px
+        }
+
+        div.container {
+            padding-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 70%;
+        }
+
+        .emph {
+            font-style: italic;
+            color: GoldenRod;
+        }
+
+
+        /*-------  TIME TABLE STYLING ------ */
+        #timetableA {
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            padding: 0px 0px 70px 0px;
+        }
+
+        #timetableB {
+            display: grid;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            padding: 0px 0px 0px 0px;
+        }
+
+        .banner {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            border: 4px solid #FFFFFF;
+            color: black;
+            background: #6cb0f5;
+            padding: 0px;
+        }
+
+        .banner2 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            border: 4px solid #FFFFFF;
+            color: black;
+            background: #acd5fc;
+            padding: 0px;
+        }
+
+        .banner3 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            border: 4px solid #FFFFFF;
+            background-color: #bae8f5;
+            padding: 0px;
+        }
+
+        .banner4 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            border: 4px solid #FFFFFF;
+            color: black;
+            background: #db8fc5;
+            padding: 0px;
+        }
+
+        .banner5 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            border: 4px solid #FFFFFF;
+            color: black;
+            background: #ffc2ce;
+            padding: 0px;
+        }
+
+        .banner6 {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+            border: 4px solid #FFFFFF;
+            background-color: #f5cbd5;
+            padding: 0px;
+        }
+
+        .info {
+            border-right: solid 7px #FFFFFF;
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .info1 {
+            border-right: solid 7px #FFFFFF;
+            display: inline-block;
+            height: 100%;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .info2 {
+            border-right: solid 7px #FFFFFF;
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            padding: 10px 10px 10px 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="https://www.ucc.ie/en/ckr05/" target="_blank">Course Info</a></li>
+            <li>
+                <a href="">Timetables</a>
+                <ul>
+                    <li><a href="#timetableA">Lecture Timetable</a></li>
+                    <li><a href="#timetableB">Lab Timetable</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#Skibbereen">Photos</a>
+                <ul>
+                    <li><a href="#Skibbereen">Skibbereen</a></li>
+                    <li><a href="#Cork">Cork</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#Services">Services</a>
+                <ul>
+                    <li><a href="#SE">Search Engine</a></li>
+                    <li><a href="#CC">Currency Converter</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <figure id="Home" class="Intro band">
+        <img src="ucc_logo_irish.svg" class="logo">
+        <h3 class="intro">Introduction</h3>
+        <p class="a">
+            Welcome to the academic website of MScIM student <span class="emph"> Louise McCarthy.</span>
+            Here you will find out all you need to know on Louise's 2022 academic pursuits as she expands her skillset in the field of
+            <span class="emph">computer science.</span>
+        </p>
+        <br>
+    </figure>
+    <br>
+    <div id="timetableA">
+        <h3 class="tt">2022 Lecture Timetable</h3>
+        <br>
+        <!-- (A) FIRST ROW : HEADINGS -->
+        <div class="banner">
+            <div class="info1">Module Code</div>
+            <div class="info2">Module Title</div>
+            <div class="info">Day</div>
+            <div class="info">Lecture Time</div>
+            <div class="info">Location</div>
+        </div>
+        <div class="banner2">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6100" target="_blank">CS6100</a></div>
+            <div class="info2">Authoring</div>
+            <div class="info">Mon</div>
+            <div class="info">12.00-14.00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G02</a></div>
+        </div>
+        <div class="banner3">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6101" target="_blank">CS6101</a></div>
+            <div class="info2">Web Devlopment for Digital Media</div>
+            <div class="info">Wed</div>
+            <div class="info">13:00-15:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G09</a></div>
+        </div>
+        <div class="banner2">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6102" target="_blank">CS6102</a></div>
+            <div class="info2">Graphics for Interactive Media</div>
+            <div class="info">Fri</div>
+            <div class="info">13:00-15:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G12</a></div>
+        </div>
+        <div class="banner3">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6103&srcdb=2022" target="_blank">CS6103</a></div>
+            <div class="info2">Audio & Sound Engineering</div>
+            <div class="info">Mon</div>
+            <div class="info">16:00-18:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G08</a></div>
+        </div>
+        <div class="banner2">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6103" target="_blank">CS6103</a></div>
+            <div class="info2">Digital Video Capture & Packaging</div>
+            <div class="info">Wed</div>
+            <div class="info">17:00-19:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G08</a></div>
+        </div>
+        <div class="banner3">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6111" target="_blank">CS6111</a></div>
+            <div class="info2">Graphics & 3D Modelling</div>
+            <div class="info">Tues</div>
+            <div class="info">16:00-18:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G18</a></div>
+        </div>
+    </div>
+
+    <div id="timetableB">
+        <h3 class="tt">2022 Lab Timetable</h3>
+        <br>
+        <!-- (B) FIRST ROW : HEADINGS -->
+        <div class="banner4">
+            <div class="info1">Module Code</div>
+            <div class="info2">Module Title</div>
+            <div class="info">Day</div>
+            <div class="info">Lab Time</div>
+            <div class="info">Location</div>
+        </div>
+        <div class="banner5">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6100" target="_blank">CS6100</a></div>
+            <div class="info2">Authoring</div>
+            <div class="info">Tues</div>
+            <div class="info">10.00-11.00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G02</a></div>
+        </div>
+        <div class="banner6">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6101" target="_blank">CS6101</a></div>
+            <div class="info2">Web Devlopment for Digital Media</div>
+            <div class="info">Thurs</div>
+            <div class="info">13:00-14:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G09</a></div>
+        </div>
+        <div class="banner5">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6102" target="_blank">CS6102</a></div>
+            <div class="info2">Graphics for Interactive Media</div>
+            <div class="info">Fri</div>
+            <div class="info">15:00-16:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G12</a></div>
+        </div>
+        <div class="banner6">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?keyword=CS6103&srcdb=2022" target="_blank">CS6103</a></div>
+            <div class="info2">Audio & Sound Engineering</div>
+            <div class="info">Tues</div>
+            <div class="info">13:00-14:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G08</a></div>
+        </div>
+        <div class="banner5">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6103" target="_blank">CS6103</a></div>
+            <div class="info2">Digital Video Capture & Packaging</div>
+            <div class="info">Thurs</div>
+            <div class="info">12:00-13:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G08</a></div>
+        </div>
+        <div class="banner6">
+            <div class="info1"><a href="https://ucc-ie-public.courseleaf.com/modules/?details&srcdb=2022&code=CS6111" target="_blank">CS6111</a></div>
+            <div class="info2">Graphics & 3D Modelling</div>
+            <div class="info">Mon</div>
+            <div class="info">11:00-12:00</div>
+            <div class="info"><a href="https://warinthevisualarts.files.wordpress.com/2013/03/westerngatewaygroundfloor.jpg" target="_blank">G18</a></div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <h3 id="Skibbereen" class="heading-wide">My Local Area: Skibbereen</h3>
+        <div class="frame">
+            <img src="skibb02.jpeg" alt="Skibb Image" style="width:100%">
+            <div class="container">
+                <p>Tragumna, Skibbereen, Co. Cork</p>
+            </div>
+        </div>
+        <br>
+        <p class="b">
+            I currently live in my native home place in West Cork. Like everyone
+            from West Cork, I absolutely adore the place and could gladly sing its
+            praises all day. I used to go to the water every single day either rowing,
+            swimming or simply walking but since I quit work, ironically, I no
+            longer have the time.
+        </p><br><p>
+            I live in a rather rural area, unfortunately
+            however, living in the scenic countryside comes at a price and I am all too
+            aware of this with the exhaustive commute I undertake each day.
+        </p>
+        <br><p>
+            Interestingly, it was only very recently that electrification came to
+            rural West Cork, so things like computers are still a revelation to us
+            down here.  As of yet we are still waiting for broadband to arrive, but
+            the word on the street is that it is imminently due, so the outlook for
+            my computing interests is improving. As one may gather from all of this,
+            living in rural West Cork is great in many respects, but it is not exactly
+            ideal for a student in the field of computer science.
+        </p>
+        <br>
+        <h3 id="Cork" class="heading-wide">My Local City: Cork</h3>
+        <div class="frame">
+            <img src="cork04.jpeg" alt="Cork Image" style="width:100%">
+            <div class="container">
+                <p>Shandon Bells, Cork City</p>
+            </div>
+        </div>
+        <br>
+        <p class="b">
+            I currently study in my local city, Cork. I have never lived, studied or
+            worked in this city previously. Until now, I have preferred to find
+            to base myself in more far flung locations, or indeed be based back home in
+            West Cork.
+        </p><br><p>
+            I have been trying to find rental accommodation in the
+            city for many months but have been very unlucky thus far. Most people my
+            age group are working and want housemates who are also working, whilst
+            most landlords want a tenant who is  full time employed.
+        </p><br><p>
+            All of the
+            decent student accommodation appears to be taken - unless of course I am
+            willing to part with a kidney to cover my rent in exchange for a room in
+            an 8 bed new build apartment complex with young adults who do not
+            conform to any sort of dish washing ideology. On average I spend about
+            4 hours a day on the road, mostly on buses, and so as a result of this I am
+            slowly going crazy.
+        </p>
+    </div>
+    <br>
+    <br>
+    <figure id="Services" class="Services band">
+        <img src="Globe.svg" class="iconA">
+        <h3 class="tt">Online Services</h3>
+        <p class="a">
+            As part of this assignment this website is required to contain  <span class="emph"> Search Engine</span>
+            aswell as <span class="emph">Currency Converter</span> functionalities embedded within it. Try them out below!
+        </p>
+        <br>
+    </figure>
+
+    <div class="container">
+        <h3 id="SE" class="serv">Search Engine</h3>
+
+        <img src="Search_icon.svg" class="icons">
+        <br>
+
+        <form action="https://www.duckduckgo.com">
+            <h4>Search:</h4>
+            <input type="text" name="q"><input type="submit" value="Go!">
+            <br>
+            <br>
+            <h4>Results Settings:</h4>
+            <label for="themes">Colour theme:</label>
+            <select id="themes" name="kae">
+                <option value="-1">Default</option>
+                <option value="d">Dark</option>
+                <option value="t">Terminal</option>
+                <option value="r">Retro</option>
+                <option value="c">Contrast</option>
+            </select>
+
+            <label for="themes">Font size:</label>
+            <select class="select" name="ks" id="Font size">
+                <option value="n">Default</option>
+                <option value="s">Small</option>
+                <option value="m">Medium</option>
+                <option value="l">large</option>
+                <option value="t">Largest</option>
+            </select>
+            <br>
+            <label for="Safe search">Safe search:</label>
+            <br>
+            <input type="radio" name="kp" value="1" checked> On <br>
+            <input type="radio" name="kp" value="-1"> Moderate <br>
+        </form>
+    </div>
+
+    <br>
+    <div class="container">
+        <h3 id="CC" class="serv">Currency Converter</h3>
+        <img src="exchange.png" class="icons">
+        <br>
+        <form action="https://www.xe.com/currencyconverter/convert/"
+              target="_blank"
+              class="to">
+            <p>From EUR to GBP</p>
+            <label For="Amount">
+                Amount:
+                <input type="text"
+                       name="Amount"
+                       min="0"
+                       placeholder="e.g. 100.00"
+                       class="currency-input" />
+                <button class="convert-btn" type="submit" value="Exchange" Convert>
+                    Convert
+                </button>
+            </label>
+            <input type="hidden" id="From" name="From" value="EUR" />
+            <input type="hidden" id="To" name="To" value="GBP" />
+        </form>
+        <br>
+        <form action="https://www.xe.com/currencyconverter/convert/"
+              target="_blank"
+              class="to">
+            <p>From GBP to EUR</p>
+            <label For="Amount">
+                Amount:
+                <input type="text"
+                       name="Amount"
+                       min="0"
+                       placeholder="e.g. 100.00"
+                       class="currency-input" />
+                <button class="convert-btn" type="submit" value="Exchange" Convert>
+                    Convert
+                </button>
+            </label>
+            <input type="hidden" id="From" name="From" value="GBP" />
+            <input type="hidden" id="To" name="To" value="EUR" />
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <h3 class="heading-wide">Further Information</h3>
+        <p>This page was first created as an assignmet in November 2022.</p>
+        <br>
+        <p>To get more updates from the creator of the page, please see the following link: </p>
+        <br>
+        <a href="https://twitter.com/Louise_Mc13" target="_blank" class="button button1">Louise on Twitter</a>
+    </div>
+    <br>
+</body>
+</html>
